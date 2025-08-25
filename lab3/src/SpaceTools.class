@@ -1,0 +1,33 @@
+import java.util.Random;
+
+public class SpaceTools{
+    public static double travelTime(Planet p, double speed) {
+        return p.getDistance() / speed;
+    }
+
+    public static Planet compareDistance(Planet a, Planet b) {
+        return a.getDistance() < b.getDistance() ? a : b;
+    }
+
+    public static String abbreviation(Planet p) {
+        return p.getName().substring(0, 3).toUpperCase();
+    }
+
+    public static double orbitTime(Planet p) {
+        return orbitTime(p, 100000);
+    }
+
+    public static double orbitTime(Planet p, double speed) {
+        double orbitCircumference = 2 * Math.PI * p.getOrbitRadius();
+        return orbitCircumference / speed;
+    }
+
+    public static Planet randomDestination(Planet[] planets) {
+        if (planets == null || planets.length == 0) {
+            return null;
+        }
+        Random rand = new Random();
+        int index = rand.nextInt(planets.length);
+        return planets[index];
+    }
+}
