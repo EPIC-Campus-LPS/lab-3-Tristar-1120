@@ -1,3 +1,6 @@
+import lab3.src.SpaceTools;
+import lab3.src.Planet;
+
 public class SpaceRunner {
     public static void main(String[] args) {
         Planet earth = new Planet("Earth", 150); // 150 million km
